@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Hangman Hilarity</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="container">
+    <form class="form-container">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="nickname">Nickname:</label>
+      <input type="text" id="nickname" name="nickname">
+      <div class="instructions">
+        <h2>Instructions:</h2>
+        <ul>
+          <li>Guess the hidden word correctly by seeing the hint by selecting letters.</li>
+          <li>You have a limited number of attempts before you get hanged.</li>
+          <li>If you guess the word correctly within the given attempts, you win!</li>
+          <li>If you fail to guess the word and use up all your attempts, you lose.</li>
+        </ul>
+      </div>
+      <div class="start-game">
+        <button class="Lets Get Started !" onclick="redirectToGame()">Lets Get Started !</button>
+      </div>
+    </form>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>
