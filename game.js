@@ -147,14 +147,27 @@ const scriptList = [
       document.querySelector(".hint-text b").innerText = hint;
       gameReset();
   }
-  
+
+  const winningPhrases = [
+    "Congratulations! You're a hangman champion!",
+    "You nailed it! Well done!",
+    "Victory is yours! Great job!",
+];
+
+const losingPhrases = [
+    "Game over! Better luck next time!",
+    "Oh no! Hang in there!",
+    "Sorry, you didn't make it this time.",
+];
+
   const gameoVer = (isVictory) => {
       const score = isVictory ? 1 * currentWord.length : 0;
-  
-      const modalText = isVictory ? 'You found the word:' : 'The correct word was:';
+      const message = isVictory ? winningPhrases[Math.floor(Math.random() * winningPhrases.length)] 
+                                : losingPhrases[Math.floor(Math.random() * losingPhrases.length)];
+      
       gameModel.querySelector("img").src = `images/${isVictory ? 'victory' : 'lost'}.gif`;
       gameModel.querySelector("h4").innerText = isVictory ? 'Congrats!' : 'Game Over!';
-      gameModel.querySelector("p").innerHTML = `${modalText} <b>${currentWord}</b><br>Your Score: ${score}`;
+      gameModel.querySelector("p").innerHTML = `${message} <b>${currentWord}</b><br>Your Score: ${score}`;
       gameModel.classList.add("show");
   }
   
@@ -189,6 +202,11 @@ const scriptList = [
   }
   
   randomWord();
+  
+  playAgain.addEventListener("click", () => {
+      window.location.href = "index.html";
+  });
+  
   
   playAgain.addEventListener("click", () => {
       window.location.href = "index.html";
