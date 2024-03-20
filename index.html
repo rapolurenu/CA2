@@ -8,12 +8,13 @@
 </head>
 <body>
   <div class="container">
-    <form class="form-container">
+    <h1>The Hangman Hilarity</h1>
+    <form class="form-container" onsubmit="startGame(event)">
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" required>
       <label for="nickname">Nickname:</label>
-      <input type="text" id="nickname" name="nickname">
-      <div class="instructions">
+      <input type="text" id="nickname" name="nickname" required>
+      <div class="instructions" style="display: none;">
         <h2>Instructions:</h2>
         <ul>
           <li>Guess the hidden word correctly by seeing the hint by selecting letters.</li>
@@ -23,10 +24,10 @@
         </ul>
       </div>
       <div class="start-game">
-        <button class="Lets Get Started !" onclick="redirectToGame()">Lets Get Started !</button>
+        <button type="submit" class="start-button">Let's Get Started</button>
       </div>
     </form>
   </div>
-  <script src="index.js"></script>
+  <script src="index.js" defer></script>
 </body>
 </html>
